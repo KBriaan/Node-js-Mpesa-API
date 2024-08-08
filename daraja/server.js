@@ -92,7 +92,7 @@ app.post('/startTransaction', async (req, res) => {
     "PartyA": phone,
     "PartyB": 174379,
     "PhoneNumber": phone,
-    "CallBackURL": process.env.CALLBACK_URL, 
+    "CallBackURL": "https://mydomain.com/path", 
     "AccountReference": "CompanyXLTD",
     "TransactionDesc": "Payment of X"
   };
