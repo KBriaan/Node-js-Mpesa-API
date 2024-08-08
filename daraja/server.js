@@ -24,7 +24,7 @@ app.post('/startTransaction', async (req, res) => {
   };
 
   try {
-    // Send the STK Push request
+    
     const response = await axios.post(
       'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
       requestBody,
