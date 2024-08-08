@@ -8,17 +8,17 @@ app.use(express.json());
 app.post('/startTransaction', async (req, res) => {
   const { amount, phoneNumber } = req.body;
 
-  // Prepare the request body for STK Push
+  
   const requestBody = {
     "BusinessShortCode": 174379,
-    "Password": process.env.PASSWORD, // Your Base64 encoded password from Safaricom
+    "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjQwODA4MTgwMjQz",
     "Timestamp": new Date().toISOString().replace(/[-:T.Z]/g, '').slice(0, 14), // Current timestamp
     "TransactionType": "CustomerPayBillOnline",
     "Amount": amount,
     "PartyA": phoneNumber,
     "PartyB": 174379,
     "PhoneNumber": phoneNumber,
-    "CallBackURL": CallBackURL, 
+    "CallBackURL": process.env.CAllBACK_URL, 
     "AccountReference": "CompanyXLTD",
     "TransactionDesc": "Payment of X"
   };
