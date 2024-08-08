@@ -80,7 +80,7 @@ async function getAccessToken() {
 }
 
 app.post('/startTransaction', async (req, res) => {
-  const { amount, phoneNumber } = req.body;
+  const { amount, phone } = req.body;
 
   // Generate the request body for STK Push
   const requestBody = {
@@ -89,9 +89,9 @@ app.post('/startTransaction', async (req, res) => {
     "Timestamp": new Date().toISOString().replace(/[-:T.Z]/g, '').slice(0, 14), // Current timestamp
     "TransactionType": "CustomerPayBillOnline",
     "Amount": amount,
-    "PartyA": phoneNumber,
+    "PartyA": phone,
     "PartyB": 174379,
-    "PhoneNumber": phoneNumber,
+    "PhoneNumber": phone,
     "CallBackURL": process.env.CALLBACK_URL, 
     "AccountReference": "CompanyXLTD",
     "TransactionDesc": "Payment of X"
