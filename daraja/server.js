@@ -129,7 +129,7 @@ app.post('/startTransaction', async (req, res) => {
     const accessToken = await getAccessToken();
 
     const response = await axios.post(
-      'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
+      'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
       requestBody,
       {
         headers: {
