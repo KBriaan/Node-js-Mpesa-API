@@ -31,7 +31,7 @@ app.post('/startTransaction', async (req, res) => {
       {
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`, // Use your generated access token here
+          'Authorization': `Bearer ${process.env.ACCESS_TOKEN}`, 
         }
       }
     );
